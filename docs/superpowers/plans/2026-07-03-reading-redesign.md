@@ -305,10 +305,11 @@ Adicionar após o bloco de tokens (fora do `@layer`):
 
 ```css
 /* Focus — keyboard navigation */
-:where(a, button, input, select, summary, [tabindex]):focus-visible {
+:where(a, button, input, select, summary, [tabindex]):not([class*="hextra-focus-visible"]):focus-visible {
   outline: 2px solid var(--site-accent);
   outline-offset: 2px;
   border-radius: 2px;
+  box-shadow: none;
 }
 ```
 
