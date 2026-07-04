@@ -9,14 +9,31 @@
     --primary-lightness: 46%;
     --site-surface: #fffdf8;
     --site-border: rgb(20 20 20 / 0.08);
-    --site-muted: rgb(20 20 20 / 0.62);
+    --site-muted: rgb(20 20 20 / 0.66);
+    --site-accent: hsl(var(--primary-hue) var(--primary-saturation) var(--primary-lightness));
+    --site-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --site-duration: 180ms;
+    --site-shadow-lift:
+      0 2px 4px rgb(20 20 20 / 0.04),
+      0 6px 12px rgb(20 20 20 / 0.05),
+      0 12px 24px rgb(20 20 20 / 0.06);
   }
 
   html[class~="dark"] {
     --site-surface: #111110;
     --site-border: rgb(255 255 255 / 0.1);
     --site-muted: rgb(255 255 255 / 0.62);
+    --site-shadow-lift:
+      0 2px 4px rgb(0 0 0 / 0.3),
+      0 8px 20px rgb(0 0 0 / 0.35);
   }
+}
+
+/* Focus — keyboard navigation */
+:where(a, button, input, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 body {
@@ -84,32 +101,28 @@ body {
 /* Micro-interactions */
 .hextra-nav-container a,
 .hextra-sidebar-container a {
-  transition: color 0.18s ease, opacity 0.18s ease;
+  transition: color var(--site-duration) var(--site-ease), opacity var(--site-duration) var(--site-ease);
 }
 
 .hextra-card {
   border: 1px solid var(--site-border);
   transition:
-    transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
-    box-shadow 0.22s ease,
-    border-color 0.22s ease;
+    transform var(--site-duration) var(--site-ease),
+    box-shadow var(--site-duration) var(--site-ease),
+    border-color var(--site-duration) var(--site-ease);
 }
 
 .hextra-card:hover {
   transform: translateY(-3px);
   border-color: rgb(255 183 77 / 0.45);
-  box-shadow: 0 14px 28px rgb(0 0 0 / 0.08);
-}
-
-html[class~="dark"] .hextra-card:hover {
-  box-shadow: 0 14px 28px rgb(0 0 0 / 0.35);
+  box-shadow: var(--site-shadow-lift);
 }
 
 .content a:not(.hextra-card) {
   text-decoration: underline;
   text-decoration-color: rgb(255 183 77 / 0.45);
   text-underline-offset: 0.18em;
-  transition: text-decoration-color 0.18s ease, color 0.18s ease;
+  transition: text-decoration-color var(--site-duration) var(--site-ease), color var(--site-duration) var(--site-ease);
 }
 
 .content a:not(.hextra-card):hover {
@@ -117,7 +130,7 @@ html[class~="dark"] .hextra-card:hover {
 }
 
 .hextra-code-copy-btn {
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 150ms var(--site-ease), opacity 150ms var(--site-ease);
 }
 
 .hextra-code-copy-btn:active {
@@ -183,7 +196,7 @@ html[class~="dark"] .hextra-card:hover {
   border: 1px solid var(--site-border);
   text-decoration: none;
   font-weight: 600;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  transition: transform var(--site-duration) var(--site-ease), border-color var(--site-duration) var(--site-ease), background var(--site-duration) var(--site-ease);
 }
 
 .site-404__action:hover {
