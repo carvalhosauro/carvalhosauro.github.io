@@ -1,11 +1,11 @@
-copyright: '© 2026 carvalhosauro'
-readMore: 'Continuar lendo'
-backToHome: 'Voltar pro início'
-notFoundTitle: 'Essa página não existe.'
-notFoundMessage: 'Talvez o link envelheceu, talvez eu tenha quebrado alguma coisa. Provavelmente fui eu.'
-notFoundAction: 'Voltar pro início'
-noResultsFound: 'Nada por aqui. Ou escrevi pouco, ou o termo é outro.'
-readingTime: '{{ .Count }} min de leitura'
-postType_aprendizado: 'aprendizado'
-postType_opiniao: 'opinião'
-postType_resumo: 'resumo'
+copyright: "© 2026 carvalhosauro"
+readMore: "Continuar lendo"
+backToHome: "Voltar pro início"
+notFoundTitle: "Essa página não existe."
+notFoundMessage: "Talvez o link envelheceu, talvez eu tenha quebrado alguma coisa. Provavelmente fui eu."
+notFoundAction: "Voltar pro início"
+noResultsFound: "Nada por aqui. Ou escrevi pouco, ou o termo é outro."
+readingTime: "{{ .Count }} min de leitura"
+postType_aprendizado: "aprendizado"
+postType_opiniao: "opinião"
+postType_resumo: "resumo"

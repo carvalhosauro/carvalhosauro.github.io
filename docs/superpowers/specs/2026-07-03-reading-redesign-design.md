@@ -110,7 +110,7 @@ voz, não traduz literalmente.
 | 404 ação | Voltar pro início | Back to start |
 | Footer tagline | Um post por vez. | One post at a time. |
 | Footer aside | Escrito por mim, revisado por mim. Os erros também são meus. | Written by me, reviewed by me. The mistakes are mine too. |
-| Busca vazia | Nada por aqui. Ou escrevi pouco, ou o termo é outro. | Nothing here. Either I haven't written much, or try another term. |
+| Busca vazia | Nada por aqui. Ou escrevi pouco, ou o termo é outro. | Nothing here. Either I wrote too little, or try another term. |
 | Read more | Continuar lendo | Keep reading |
 | Tempo de leitura | {n} min de leitura | {n} min read |
 | Badge aprendizado | aprendizado | learning |

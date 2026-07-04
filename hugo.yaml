@@ -10,9 +10,6 @@ defaultContentLanguageInSubdir: true
 outputs:
   home: [HTML, RSS]
 
-minify:
-  disableJS: true
-
 module:
   hugoVersion:
     extended: true
@@ -152,10 +149,6 @@ params:
   footer:
     displayCopyright: true
     displayPoweredBy: false
-
-  microcopy:
-    footerTagline: "Um post por vez."
-    footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
 
   theme:
     default: light
