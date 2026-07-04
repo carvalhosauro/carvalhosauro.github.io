@@ -2,6 +2,7 @@
 title: "Welcome to the blog"
 date: 2026-07-03
 draft: false
+postType: "aprendizado"
 translationKey: welcome
 tags: ["meta", "hugo"]
 description: "First post — blog bootstrap with Hugo, Hextra, and i18n."
