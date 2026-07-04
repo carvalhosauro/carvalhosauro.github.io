@@ -804,8 +804,8 @@ Adicionar em `assets/css/custom.css`:
   transition: color var(--site-duration) var(--site-ease);
 }
 
-.hextra-toc .hextra-toc-active {
-  color: var(--site-accent);
+.hextra-toc a.hextra-toc-active {
+  color: var(--site-accent) !important;
   font-weight: 600;
 }
 
