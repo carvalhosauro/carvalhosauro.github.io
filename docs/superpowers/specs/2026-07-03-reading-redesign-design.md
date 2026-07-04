@@ -57,8 +57,10 @@ conteúdos condensados (resumos). Já existe uma base de customização
   caminhos exatos verificados na fase de plano contra Hextra v0.12.3).
 - Item da lista: data (mono, curta) + badge do tipo + título (serif) + resumo
   + tempo de leitura.
-- Front matter novo: `type: aprendizado | opiniao | resumo` (slugs sem acento;
-  rótulo exibido vem de i18n). Post sem `type` → sem badge, layout não quebra.
+- Front matter novo: `postType: aprendizado | opiniao | resumo` (slugs sem
+  acento; rótulo exibido vem de i18n). Post sem `postType` → sem badge, layout
+  não quebra. Nota: `type` é front matter reservado do Hugo (altera o lookup
+  de template), por isso `postType`.
 - Cores de badge (dessaturadas, sóbrias):
   - `aprendizado` → âmbar
   - `opiniao` → azul-ardósia
@@ -73,9 +75,14 @@ conteúdos condensados (resumos). Já existe uma base de customização
   nada quebra. `prefers-reduced-motion` → sem transição animada.
 - Header do artigo: badge do tipo + data + tempo de leitura
   (`.ReadingTime`, rótulo via i18n: "X min de leitura" / "X min read").
-- Âncoras de heading (`#`) visíveis apenas no hover do heading.
-- TOC: active-state com transição suave de cor.
-- Prev/next no fim do artigo com título completo do post vizinho.
+- Âncoras de heading (`#`) visíveis apenas no hover do heading — o Hextra já
+  implementa (`.subheading-anchor`); refinar cor/transição via CSS.
+- TOC: active-state com transição suave de cor — o Hextra já aplica a classe
+  `hextra-toc-active` via `toc-scroll.js`; estilizar via CSS.
+- Prev/next no fim do artigo com título completo do post vizinho — o
+  `components/pager.html` do Hextra já faz isso; só estilo.
+- Busca vazia: usar a chave i18n `noResultsFound` do Hextra. O mecanismo
+  atual (`data-empty-hint` + chave `searchEmpty`) é código morto — remover.
 
 ## Seção 4 — Micro-interações
 
@@ -130,8 +137,8 @@ entram no i18n, pois são usados em templates).
 
 ## Tratamento de erros / degradação
 
-- Post sem `type`: sem badge, sem erro de build.
-- `type` desconhecido: badge neutra (cinza), sem cor especial.
+- Post sem `postType`: sem badge, sem erro de build.
+- `postType` desconhecido: badge neutra (cinza), sem cor especial.
 - Sem JS: sem barra de progresso, resto intacto.
 - `prefers-reduced-motion`: animações e transições desligadas.
 
