@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <div class="site-404">
+    <p class="site-404__code">HTTP 404</p>
+    <h1 class="site-404__title">{{ i18n "notFoundTitle" }}</h1>
+    <p class="site-404__message">{{ i18n "notFoundMessage" }}</p>
+    <a class="site-404__action" href="{{ relLangURL "" }}">{{ i18n "notFoundAction" }} →</a>
+  </div>
+{{ end }}
