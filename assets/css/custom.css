@@ -365,3 +365,41 @@ html[class~="dark"] .site-badge--neutral {
   border-color: hsl(0 0% 28%);
   color: hsl(0 0% 72%);
 }
+
+/* Article page */
+.site-article-title {
+  font-family: "IBM Plex Serif", Georgia, serif;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.site-article-meta {
+  margin: 1rem 0 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--site-border);
+}
+
+/* Reading typography — Stripe-like breathing room, ~68ch measure */
+.site-article-content {
+  max-width: 68ch;
+}
+
+.site-article-content p,
+.site-article-content li {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.site-article-content h2 {
+  margin-top: 2.75rem;
+}
+
+.site-article-content h3 {
+  margin-top: 2rem;
+}
+
+.site-article-content blockquote {
+  border-left: 3px solid rgb(255 183 77 / 0.5);
+  font-style: normal;
+  color: var(--site-muted);
+}
