@@ -403,3 +403,15 @@ html[class~="dark"] .site-badge--neutral {
   font-style: normal;
   color: var(--site-muted);
 }
+
+/* Reading progress bar */
+.site-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  height: 3px;
+  width: 0;
+  background: var(--site-accent);
+  transition: width 80ms linear;
+}

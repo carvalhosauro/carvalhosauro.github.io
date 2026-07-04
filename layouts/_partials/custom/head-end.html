@@ -1,3 +1,20 @@
 <script>
   document.documentElement.classList.add("js-ready");
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!document.querySelector(".site-article-meta")) return;
+    var bar = document.createElement("div");
+    bar.className = "site-reading-progress";
+    bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+    var update = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - doc.clientHeight;
+      bar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0) + "%";
+    };
+    document.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
+    update();
+  });
+</script>
