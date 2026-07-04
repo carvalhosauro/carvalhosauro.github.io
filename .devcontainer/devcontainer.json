@@ -1,0 +1,26 @@
+{
+  "name": "carvalhosauro-blog",
+  "image": "mcr.microsoft.com/devcontainers/go:1",
+  "features": {
+    "ghcr.io/devcontainers/features/hugo:1": {
+      "version": "0.146.0",
+      "extended": true
+    }
+  },
+  "forwardPorts": [1313],
+  "postCreateCommand": "hugo mod tidy",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "budparr.language-hugo-vscode",
+        "tamasfe.even-better-toml"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "1313": {
+      "label": "Hugo",
+      "onAutoForward": "openBrowser"
+    }
+  }
+}
