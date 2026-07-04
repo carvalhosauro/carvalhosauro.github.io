@@ -1,0 +1,99 @@
+# Hugo configuration — carvalhosauro.github.io
+baseURL: "https://carvalhosauro.github.io/"
+title: "carvalhosauro"
+languageCode: "pt-br"
+defaultContentLanguage: "pt-br"
+enableRobotsTXT: true
+enableEmoji: true
+
+outputs:
+  home: [HTML, RSS]
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.146.0"
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Artigos
+      pageRef: /posts
+      weight: 1
+    - name: Sobre
+      pageRef: /sobre
+      weight: 2
+    - name: Quem sou eu
+      pageRef: /quem-sou-eu
+      weight: 3
+    - name: Leituras
+      pageRef: /leituras
+      weight: 4
+    - name: Arquivo
+      pageRef: /arquivo
+      weight: 5
+    - name: Buscar
+      weight: 6
+      params:
+        type: search
+    - name: RSS
+      weight: 7
+      url: "/index.xml"
+      params:
+        icon: rss
+    - name: GitHub
+      weight: 8
+      url: "https://github.com/carvalhosauro"
+      params:
+        icon: github
+
+params:
+  description: "Blog pessoal sobre tecnologia, carreira e leituras."
+
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+  footer:
+    displayCopyright: true
+    displayPoweredBy: true
+
+  theme:
+    default: system
+    displayToggle: true
+
+  search:
+    enable: true
+    type: flexsearch
+
+  blog:
+    list:
+      displayTags: true
+      sortBy: date
+      sortOrder: desc
+      pagerSize: 10
+
+  article:
+    displayPagination: true
+
+  archives:
+    section: posts
+    dateFormat: "02 Jan 2006"
+
+  page:
+    width: normal
+
+  author:
+    name: carvalhosauro
+    email: ""
+
+  editURL:
+    enable: false
