@@ -1,0 +1,15 @@
+# Hugo
+/public/
+/resources/_gen/
+/.hugo_build.lock
+/hugo_stats.json
+
+# Hugo modules cache
+/_vendor/
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
