@@ -1,7 +1,11 @@
-copyright: "© 2026 carvalhosauro"
-readMore: "Read article"
-backToHome: "Back to home"
-notFoundTitle: "404 — route not mapped"
-notFoundMessage: "This URL is not in the site graph. The post may have moved or the link aged poorly."
-notFoundAction: "Go to home"
-searchEmpty: "Nothing found. Try another term or browse the archive."
+copyright: '© 2026 carvalhosauro'
+readMore: 'Keep reading'
+backToHome: 'Back to start'
+notFoundTitle: 'This page doesn''t exist.'
+notFoundMessage: 'Maybe the link aged, maybe I broke something. Probably me.'
+notFoundAction: 'Back to start'
+noResultsFound: 'Nothing here. Either I haven''t written much, or try another term.'
+readingTime: '{{ .Count }} min read'
+postType_aprendizado: 'learning'
+postType_opiniao: 'opinion'
+postType_resumo: 'digest'

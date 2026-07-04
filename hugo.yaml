@@ -10,6 +10,9 @@ defaultContentLanguageInSubdir: true
 outputs:
   home: [HTML, RSS]
 
+minify:
+  disableJS: true
+
 module:
   hugoVersion:
     extended: true
@@ -36,12 +39,12 @@ languages:
     params:
       description: "Referência técnica em construção — engenharia, carreira e leituras curadas."
       microcopy:
-        heroEyebrow: "Base técnica em progresso"
-        heroTitle: "Ideias que sobrevivem ao code review."
-        heroSubtitle: "Conteúdo direto para quem trabalha com programação — sem hype, com profundidade."
+        heroEyebrow: "Diário técnico"
+        heroTitle: "Escrevo pra entender o que aprendi."
+        heroSubtitle: "Aprendizados, opiniões e resumos do que estou estudando. Sem fingir que sei mais do que sei."
         exploreTitle: "Por onde começar"
-        footerTagline: "Construindo referência técnica, um artigo por vez."
-        footerAside: "Feito com rigor, café e diff revisado."
+        footerTagline: "Um post por vez."
+        footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
     menu:
       main:
         - name: Artigos
@@ -94,12 +97,12 @@ languages:
     params:
       description: "Technical reference under construction — engineering, career, and curated reading."
       microcopy:
-        heroEyebrow: "Technical foundation in progress"
-        heroTitle: "Ideas that survive code review."
-        heroSubtitle: "Straightforward content for people who ship software — no hype, real depth."
+        heroEyebrow: "Tech journal"
+        heroTitle: "I write to understand what I learned."
+        heroSubtitle: "Learnings, opinions, and digests of what I'm studying. No pretending I know more than I do."
         exploreTitle: "Start here"
-        footerTagline: "Building technical reference, one post at a time."
-        footerAside: "Built with rigor, coffee, and reviewed diffs."
+        footerTagline: "One post at a time."
+        footerAside: "Written by me, reviewed by me. The mistakes are mine too."
     menu:
       main:
         - name: Articles
@@ -150,8 +153,12 @@ params:
     displayCopyright: true
     displayPoweredBy: false
 
+  microcopy:
+    footerTagline: "Um post por vez."
+    footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
+
   theme:
-    default: system
+    default: light
     displayToggle: true
 
   search:

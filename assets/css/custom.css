@@ -124,14 +124,6 @@ html[class~="dark"] .hextra-card:hover {
   transform: scale(0.94);
 }
 
-.hextra-search-no-result::after {
-  content: attr(data-empty-hint);
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: var(--site-muted);
-}
-
 .site-footer-note {
   margin: 0;
   font-size: 0.92rem;

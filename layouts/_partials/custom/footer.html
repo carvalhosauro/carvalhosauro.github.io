@@ -1,6 +1,6 @@
 <div class="hextra-custom-footer mt-6 pt-4 border-t hx:border-gray-200 dark:hx:border-neutral-800">
   <p class="site-footer-note">
-    <strong>{{ .Site.Params.microcopy.footerTagline | default "Building technical reference, one post at a time." }}</strong>
+    <strong>{{ .context.Site.Params.microcopy.footerTagline | default "Building technical reference, one post at a time." }}</strong>
   </p>
-  <p class="site-footer-tagline">{{ .Site.Params.microcopy.footerAside | default "Built with rigor, coffee, and reviewed diffs." }}</p>
+  <p class="site-footer-tagline">{{ .context.Site.Params.microcopy.footerAside | default "Built with rigor, coffee, and reviewed diffs." }}</p>
 </div>
