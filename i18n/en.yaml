@@ -1,0 +1,7 @@
+copyright: "© 2026 carvalhosauro"
+readMore: "Read article"
+backToHome: "Back to home"
+notFoundTitle: "404 — route not mapped"
+notFoundMessage: "This URL is not in the site graph. The post may have moved or the link aged poorly."
+notFoundAction: "Go to home"
+searchEmpty: "Nothing found. Try another term or browse the archive."

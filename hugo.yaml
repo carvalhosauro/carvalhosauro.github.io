@@ -1,10 +1,11 @@
 # Hugo configuration — carvalhosauro.github.io
 baseURL: "https://carvalhosauro.github.io/"
 title: "carvalhosauro"
-languageCode: "pt-br"
-defaultContentLanguage: "pt-br"
 enableRobotsTXT: true
 enableEmoji: true
+
+defaultContentLanguage: pt-br
+defaultContentLanguageInSubdir: true
 
 outputs:
   home: [HTML, RSS]
@@ -23,48 +24,131 @@ markup:
   highlight:
     noClasses: false
 
-menu:
-  main:
-    - name: Artigos
-      pageRef: /posts
-      weight: 1
-    - name: Sobre
-      pageRef: /sobre
-      weight: 2
-    - name: Quem sou eu
-      pageRef: /quem-sou-eu
-      weight: 3
-    - name: Leituras
-      pageRef: /leituras
-      weight: 4
-    - name: Arquivo
-      pageRef: /arquivo
-      weight: 5
-    - name: Buscar
-      weight: 6
-      params:
-        type: search
-    - name: RSS
-      weight: 7
-      url: "/index.xml"
-      params:
-        icon: rss
-    - name: GitHub
-      weight: 8
-      url: "https://github.com/carvalhosauro"
-      params:
-        icon: github
+languages:
+  pt-br:
+    languageCode: pt-br
+    languageName: Português
+    label: PT
+    locale: pt-BR
+    weight: 1
+    contentDir: content/pt-br
+    title: carvalhosauro
+    params:
+      description: "Referência técnica em construção — engenharia, carreira e leituras curadas."
+      microcopy:
+        heroEyebrow: "Base técnica em progresso"
+        heroTitle: "Ideias que sobrevivem ao code review."
+        heroSubtitle: "Conteúdo direto para quem trabalha com programação — sem hype, com profundidade."
+        exploreTitle: "Por onde começar"
+        footerTagline: "Construindo referência técnica, um artigo por vez."
+        footerAside: "Feito com rigor, café e diff revisado."
+    menu:
+      main:
+        - name: Artigos
+          pageRef: /posts
+          weight: 1
+        - name: Sobre
+          pageRef: /sobre
+          weight: 2
+        - name: Quem sou eu
+          pageRef: /quem-sou-eu
+          weight: 3
+        - name: Leituras
+          pageRef: /leituras
+          weight: 4
+        - name: Arquivo
+          pageRef: /arquivo
+          weight: 5
+        - name: Tema
+          weight: 6
+          params:
+            type: theme-toggle
+        - name: Idioma
+          weight: 7
+          params:
+            type: language-switch
+            label: true
+        - name: Buscar
+          weight: 8
+          params:
+            type: search
+        - name: RSS
+          weight: 9
+          url: "/pt-br/index.xml"
+          params:
+            icon: rss
+        - name: GitHub
+          weight: 10
+          url: "https://github.com/carvalhosauro"
+          params:
+            icon: github
+
+  en:
+    languageCode: en
+    languageName: English
+    label: EN
+    locale: en
+    weight: 2
+    contentDir: content/en
+    title: carvalhosauro
+    params:
+      description: "Technical reference under construction — engineering, career, and curated reading."
+      microcopy:
+        heroEyebrow: "Technical foundation in progress"
+        heroTitle: "Ideas that survive code review."
+        heroSubtitle: "Straightforward content for people who ship software — no hype, real depth."
+        exploreTitle: "Start here"
+        footerTagline: "Building technical reference, one post at a time."
+        footerAside: "Built with rigor, coffee, and reviewed diffs."
+    menu:
+      main:
+        - name: Articles
+          pageRef: /posts
+          weight: 1
+        - name: About
+          pageRef: /about
+          weight: 2
+        - name: Who am I
+          pageRef: /who-am-i
+          weight: 3
+        - name: Reading
+          pageRef: /reading
+          weight: 4
+        - name: Archive
+          pageRef: /archive
+          weight: 5
+        - name: Theme
+          weight: 6
+          params:
+            type: theme-toggle
+        - name: Language
+          weight: 7
+          params:
+            type: language-switch
+            label: true
+        - name: Search
+          weight: 8
+          params:
+            type: search
+        - name: RSS
+          weight: 9
+          url: "/en/index.xml"
+          params:
+            icon: rss
+        - name: GitHub
+          weight: 10
+          url: "https://github.com/carvalhosauro"
+          params:
+            icon: github
 
 params:
-  description: "Blog pessoal sobre tecnologia, carreira e leituras."
-
   navbar:
     displayTitle: true
     displayLogo: false
 
   footer:
     displayCopyright: true
-    displayPoweredBy: true
+    displayPoweredBy: false
 
   theme:
     default: system
