@@ -218,19 +218,46 @@ body {
   }
 }
 
+/* TOC active state (class applied by Hextra's toc-scroll.js) */
+.hextra-toc a {
+  transition: color var(--site-duration) var(--site-ease);
+}
+
+.hextra-toc .hextra-toc-active {
+  color: var(--site-accent);
+  font-weight: 600;
+}
+
+/* Heading anchors — theme shows them on hover; tint with accent */
+.subheading-anchor::after {
+  color: rgb(255 183 77 / 0.75) !important;
+  transition: opacity var(--site-duration) var(--site-ease);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .site-hero,
   .site-404,
   .hextra-card,
   .hextra-nav-container a,
+  .hextra-sidebar-container a,
+  .hextra-toc a,
   .content a:not(.hextra-card),
-  .site-404__action {
+  .site-404__action,
+  .site-post-item__arrow,
+  .site-reading-progress,
+  .subheading-anchor::after,
+  .hextra-code-copy-btn {
     animation: none;
     transition: none;
   }
 
   .hextra-card:hover,
   .site-404__action:hover {
+    transform: none;
+  }
+
+  .site-post-item__arrow {
+    opacity: 1;
     transform: none;
   }
 }
@@ -414,4 +441,5 @@ html[class~="dark"] .site-badge--neutral {
   width: 0;
   background: var(--site-accent);
   transition: width 80ms linear;
+  pointer-events: none;
 }
