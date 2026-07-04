@@ -1,0 +1,16 @@
+{{- /*
+  Post metadata line: date + type badge + optional reading time.
+  Params: page (Page), showReadingTime (bool, default false)
+*/ -}}
+{{- $page := .page -}}
+{{- $showReadingTime := .showReadingTime | default false -}}
+{{- $known := slice "aprendizado" "opiniao" "resumo" -}}
+<div class="site-post-meta">
+  {{- with $page.Date }}<time class="site-post-meta__date" datetime="{{ .Format "2006-01-02" }}">{{ partial "utils/format-date" . }}</time>{{ end -}}
+  {{- with $page.Params.postType -}}
+    {{- $slug := . -}}
+    {{- $variant := cond (in $known $slug) $slug "neutral" -}}
+    <span class="site-badge site-badge--{{ $variant }}">{{ or (T (printf "postType_%s" $slug)) $slug }}</span>
+  {{- end -}}
+  {{- if $showReadingTime }}<span class="site-post-meta__reading">{{ T "readingTime" $page.ReadingTime }}</span>{{ end -}}
+</div>
