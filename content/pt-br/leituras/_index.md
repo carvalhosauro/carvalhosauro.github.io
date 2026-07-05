@@ -8,7 +8,7 @@ Curadoria de leituras que influenciam como penso engenharia e carreira.
 
 ## Em andamento
 
-- _Adicione aqui_
+- [We replaced Redis with MySQL for inventory reservations—and it scaled](https://shopify.engineering/scaling-inventory-reservations) — Shopify Engineering (Emilie Noel)
 
 ## Recomendados
 
