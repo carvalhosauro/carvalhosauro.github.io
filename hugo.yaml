@@ -44,44 +44,35 @@ languages:
         footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
     menu:
       main:
-        - name: Artigos
-          pageRef: /posts
-          weight: 1
         - name: Sobre
           pageRef: /sobre
-          weight: 2
-        - name: Quem sou eu
-          pageRef: /quem-sou-eu
-          weight: 3
+          weight: 1
         - name: Leituras
           pageRef: /leituras
-          weight: 4
-        - name: Arquivo
-          pageRef: /arquivo
-          weight: 5
-        - name: Tema
-          weight: 6
-          params:
-            type: theme-toggle
-        - name: Idioma
-          weight: 7
-          params:
-            type: language-switch
-            label: true
-        - name: Buscar
-          weight: 8
-          params:
-            type: search
+          weight: 2
         - name: RSS
-          weight: 9
+          weight: 3
           url: "/pt-br/index.xml"
           params:
             icon: rss
         - name: GitHub
-          weight: 10
+          weight: 4
           url: "https://github.com/carvalhosauro"
           params:
             icon: github
+        - name: Buscar
+          weight: 5
+          params:
+            type: search
+        - name: Idioma
+          weight: 6
+          params:
+            type: language-switch
+            label: false
+        - name: Tema
+          weight: 7
+          params:
+            type: theme-toggle
 
   en:
     languageCode: en
@@ -102,44 +93,35 @@ languages:
         footerAside: "Written by me, reviewed by me. The mistakes are mine too."
     menu:
       main:
-        - name: Articles
-          pageRef: /posts
-          weight: 1
         - name: About
           pageRef: /about
-          weight: 2
-        - name: Who am I
-          pageRef: /who-am-i
-          weight: 3
+          weight: 1
         - name: Reading
           pageRef: /reading
-          weight: 4
-        - name: Archive
-          pageRef: /archive
-          weight: 5
-        - name: Theme
-          weight: 6
-          params:
-            type: theme-toggle
-        - name: Language
-          weight: 7
-          params:
-            type: language-switch
-            label: true
-        - name: Search
-          weight: 8
-          params:
-            type: search
+          weight: 2
         - name: RSS
-          weight: 9
+          weight: 3
           url: "/en/index.xml"
           params:
             icon: rss
         - name: GitHub
-          weight: 10
+          weight: 4
           url: "https://github.com/carvalhosauro"
           params:
             icon: github
+        - name: Search
+          weight: 5
+          params:
+            type: search
+        - name: Language
+          weight: 6
+          params:
+            type: language-switch
+            label: false
+        - name: Theme
+          weight: 7
+          params:
+            type: theme-toggle
 
 params:
   navbar:

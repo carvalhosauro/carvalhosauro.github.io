@@ -6,6 +6,7 @@ notFoundMessage: "Talvez o link envelheceu, talvez eu tenha quebrado alguma cois
 notFoundAction: "Voltar pro início"
 noResultsFound: "Nada por aqui. Ou escrevi pouco, ou o termo é outro."
 readingTime: "{{ .Count }} min de leitura"
+monthYearFormat: "January de 2006"
 postType_aprendizado: "aprendizado"
 postType_opiniao: "opinião"
 postType_resumo: "resumo"
