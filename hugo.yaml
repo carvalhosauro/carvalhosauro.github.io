@@ -37,8 +37,8 @@ languages:
       description: "Referência técnica em construção — engenharia, carreira e leituras curadas."
       microcopy:
         heroEyebrow: "Diário técnico"
-        heroTitle: "Escrevo pra entender o que aprendi."
-        heroSubtitle: "Aprendizados, opiniões e resumos do que estou estudando. Sem fingir que sei mais do que sei."
+        heroTitle: "carvalhosauro"
+        heroSubtitle: "Diário técnico"
         exploreTitle: "Por onde começar"
         footerTagline: "Um post por vez."
         footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
@@ -86,8 +86,8 @@ languages:
       description: "Technical reference under construction — engineering, career, and curated reading."
       microcopy:
         heroEyebrow: "Tech journal"
-        heroTitle: "I write to understand what I learned."
-        heroSubtitle: "Learnings, opinions, and digests of what I'm studying. No pretending I know more than I do."
+        heroTitle: "carvalhosauro"
+        heroSubtitle: "Tech journal"
         exploreTitle: "Start here"
         footerTagline: "One post at a time."
         footerAside: "Written by me, reviewed by me. The mistakes are mine too."
