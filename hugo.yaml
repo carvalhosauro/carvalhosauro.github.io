@@ -38,7 +38,7 @@ languages:
       microcopy:
         heroEyebrow: "Diário técnico"
         heroTitle: "carvalhosauro"
-        heroSubtitle: "Diário técnico"
+        heroSubtitle: "Diário técnico. Escrevo pra entender o que aprendi."
         exploreTitle: "Por onde começar"
         footerTagline: "Um post por vez."
         footerAside: "Escrito por mim, revisado por mim. Os erros também são meus."
@@ -87,7 +87,7 @@ languages:
       microcopy:
         heroEyebrow: "Tech journal"
         heroTitle: "carvalhosauro"
-        heroSubtitle: "Tech journal"
+        heroSubtitle: "Tech journal. I write to understand what I learned."
         exploreTitle: "Start here"
         footerTagline: "One post at a time."
         footerAside: "Written by me, reviewed by me. The mistakes are mine too."

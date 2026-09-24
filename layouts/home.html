@@ -3,25 +3,50 @@
     {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
       <main id="content" class="hx:w-full hx:min-w-0 hextra-max-content-width hx:px-6 hx:pt-4 hx:md:px-12">
-        <header class="site-home-intro">
-          <h1 class="site-home-intro__title">{{ site.Params.microcopy.heroTitle }}</h1>
-          <p class="site-home-intro__subtitle">{{ site.Params.microcopy.heroSubtitle }}</p>
-        </header>
-        {{- with .Content }}<div class="content site-home-note">{{ . }}</div>{{ end -}}
-        {{- /* Home is the archive: all posts grouped by month/year, newest first */ -}}
         {{- $posts := where site.RegularPages "Section" "posts" -}}
-        {{- range $group := $posts.GroupByDate "2006-01" "desc" }}
-          {{- $date := (index $group.Pages 0).Date -}}
+        {{- $aboutPage := site.GetPage (cond (eq site.Language.Lang "en") "/about" "/sobre") -}}
+
+        <header class="site-intro">
+          <div class="site-intro__body">
+            <h1 class="site-intro__title">{{ site.Params.microcopy.heroTitle }}</h1>
+            <p class="site-intro__lede">{{ site.Params.microcopy.heroSubtitle }}</p>
+            <p class="site-intro__facts">
+              {{- with $posts }}
+                {{- $first := index (sort . "Date" "asc") 0 -}}
+                <span>{{ T "postsCount" (len .) }} {{ T "since" }} {{ time.Format (T "monthYearFormat") $first.Date }}</span>
+              {{- end }}
+              {{- with $aboutPage }}<a href="{{ .RelPermalink }}">{{ T "aboutLink" }}</a>{{ end }}
+              <a href="{{ "index.xml" | relLangURL }}">RSS</a>
+            </p>
+          </div>
+        </header>
+
+        {{- with .Content }}<div class="content site-home-note">{{ . }}</div>{{ end -}}
+
+        {{- /* Latest post leads; the rest is a dense archive grouped by year */ -}}
+        {{- $sorted := $posts.ByDate.Reverse -}}
+        {{- with index $sorted 0 }}
+          <section class="site-lead" aria-labelledby="site-lead-title">
+            {{ partial "post-meta.html" (dict "page" . "showReadingTime" true) }}
+            <h2 class="site-lead__title" id="site-lead-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="site-lead__summary">{{- partial "utils/page-description" . -}}</p>
+            <a class="site-lead__more" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">{{ T "readMore" }}<span class="site-lead__arrow">→</span></a>
+          </section>
+        {{- end }}
+
+        {{- $rest := after 1 $sorted -}}
+        {{- range $group := $rest.GroupByDate "2006" }}
           <section class="site-archive-group">
-            <h2 class="site-archive-heading">{{ strings.FirstUpper (time.Format (T "monthYearFormat") $date) }}</h2>
-            <ul class="site-post-list">
+            <h2 class="site-archive-heading">{{ $group.Key }}</h2>
+            <ul class="site-archive-list">
               {{- range $group.Pages }}
-                <li class="site-post-item">
-                  {{ partial "post-meta.html" (dict "page" . "showReadingTime" true) }}
-                  <h3 class="site-post-item__title">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}<span class="site-post-item__arrow" aria-hidden="true">→</span></a>
-                  </h3>
-                  <p class="site-post-item__summary">{{- partial "utils/page-description" . -}}</p>
+                <li class="site-archive-item">
+                  <time class="site-archive-item__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ time.Format (T "dayMonthFormat") .Date }}</time>
+                  <div class="site-archive-item__body">
+                    <h3 class="site-archive-item__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <p class="site-archive-item__summary">{{- partial "utils/page-description" . -}}</p>
+                    {{ partial "post-meta.html" (dict "page" . "showReadingTime" true "showDate" false) }}
+                  </div>
                 </li>
               {{- end }}
             </ul>

@@ -1,12 +1,13 @@
 {{- /*
   Post metadata line: date + type badge + optional reading time.
-  Params: page (Page), showReadingTime (bool, default false)
+  Params: page (Page), showReadingTime (bool, default false), showDate (bool, default true)
 */ -}}
 {{- $page := .page -}}
 {{- $showReadingTime := .showReadingTime | default false -}}
+{{- $showDate := cond (isset . "showDate") .showDate true -}}
 {{- $known := slice "aprendizado" "opiniao" "resumo" -}}
 <div class="site-post-meta">
-  {{- with $page.Date }}<time class="site-post-meta__date" datetime="{{ .Format "2006-01-02" }}">{{ partial "utils/format-date" . }}</time>{{ end -}}
+  {{- if $showDate }}{{ with $page.Date }}<time class="site-post-meta__date" datetime="{{ .Format "2006-01-02" }}">{{ partial "utils/format-date" . }}</time>{{ end }}{{ end -}}
   {{- with $page.Params.postType -}}
     {{- $slug := . -}}
     {{- $variant := cond (in $known $slug) $slug "neutral" -}}
