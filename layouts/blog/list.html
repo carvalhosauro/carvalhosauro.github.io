@@ -13,9 +13,9 @@
           {{- range $paginator.Pages }}
             <li class="site-post-item">
               {{ partial "post-meta.html" (dict "page" . "showReadingTime" true) }}
-              <h3 class="site-post-item__title">
+              <h2 class="site-post-item__title">
                 <a href="{{ .RelPermalink }}">{{ .Title }}<span class="site-post-item__arrow" aria-hidden="true">→</span></a>
-              </h3>
+              </h2>
               <p class="site-post-item__summary">{{- partial "utils/page-description" . -}}</p>
             </li>
           {{ end -}}
