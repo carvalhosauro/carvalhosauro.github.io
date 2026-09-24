@@ -1,7 +1,7 @@
 ---
 title: "Tela bonita não é feature pronta"
 date: 2026-09-24
-draft: true
+draft: false
 postType: "aprendizado"
 translationKey: "nao-e-so-tela-bonita"
 tags: ["react-native", "mobile", "ios", "performance", "debito-tecnico", "ia"]

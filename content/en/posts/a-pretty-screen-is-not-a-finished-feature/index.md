@@ -1,7 +1,7 @@
 ---
 title: "A pretty screen is not a finished feature"
 date: 2026-09-24
-draft: true
+draft: false
 postType: "aprendizado"
 translationKey: "nao-e-so-tela-bonita"
 tags: ["react-native", "mobile", "ios", "performance", "tech-debt", "ai"]
