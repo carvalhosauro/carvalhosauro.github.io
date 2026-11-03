@@ -1,7 +1,7 @@
 ---
 title: "Vou ressuscitar a FuncionárIA"
 date: 2026-11-02
-draft: true
+draft: false
 postType: "aprendizado"
 translationKey: "funcionaria-revival"
 tags: ["produto", "ia", "pigz", "funcionaria", "planejamento"]

@@ -1,7 +1,7 @@
 ---
 title: "I'm bringing FuncionárIA back to life"
 date: 2026-11-02
-draft: true
+draft: false
 postType: "aprendizado"
 translationKey: "funcionaria-revival"
 tags: ["product", "ai", "pigz", "funcionaria", "planning"]
